@@ -4,8 +4,9 @@ using namespace std;
 
 int* arithmeticProgression(int N, int A, int D) {
     int* progression = new int[N];
-    for (int i = 0; i < N; i++) {
-        progression[i] = A + i * D;
+    progression[0] = A;
+    for (int i = 1; i < N; i++) {
+        progression[i] = progression[i - 1] + D;
     }
     return progression;
 }
@@ -33,7 +34,6 @@ void printArray(int* array, int size) {
 
 int main() {
     setlocale(LC_ALL, "Russian");
-
     // ------------------------------ ЗАДАЧА 1 ------------------------------
     cout << "------------------------------ ЗАДАЧА 1 ------------------------------" << endl;
     cout << "Дано целое число N (N > 1), а также первый член A и разность D арифметической прогрессии." << endl;
